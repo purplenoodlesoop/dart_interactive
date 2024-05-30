@@ -4,7 +4,7 @@ version: 1.3.0
 repository: https://github.com/fzyzcjy/flutter_interactive
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
   analyzer: ">=5.0.0 <=5.2.0"

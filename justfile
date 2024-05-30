@@ -13,6 +13,7 @@ release old_version new_version:
     grep -q 'version: {{old_version}}' packages/interactive/pubspec.yaml
     grep -q '{{new_version}}' CHANGELOG.md
 
+    just nix_release {{new_version}}
     sed -i '' 's/version: {{old_version}}/version: {{new_version}}/g' packages/interactive/pubspec.yaml
 
     git add --all
