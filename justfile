@@ -4,6 +4,11 @@ export_logo:
 publish_all:
     (cd packages/interactive && flutter pub publish --force --server=https://pub.dartlang.org)
 
+nix_release new_version:
+    echo "\"{{new_version}}\"" > packages/interactive/version.nix
+    (cd packages/interactive; yq . pubspec.lock > pubspec.lock.json)
+    
+
 release old_version new_version:
     grep -q 'version: {{old_version}}' packages/interactive/pubspec.yaml
     grep -q '{{new_version}}' CHANGELOG.md
